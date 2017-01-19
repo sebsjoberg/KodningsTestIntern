@@ -4,4 +4,4 @@ Writing something in rust for the first time!
 
 50 = 0
 
-1000 = Too big for 64 bit
+1000 = 9
