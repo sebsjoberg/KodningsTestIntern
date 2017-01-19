@@ -1,17 +1,21 @@
+extern crate num;
+
 use std::env;
+use num::bigint::BigUint;
+use num::One;
 
 struct Fib {
-    curr: u64,
-    next: u64,
+    curr: BigUint,
+    next: BigUint,
 }
 
 impl Iterator for Fib {
-    type Item = u64;
-    fn next(&mut self) -> Option<u64> {
-        let tmp = self.curr + self.next;
-        self.curr = self.next;
+    type Item = BigUint;
+    fn next(&mut self) -> Option<BigUint> {
+        let tmp = self.curr.clone() + self.next.clone();
+        self.curr = self.next.clone();
         self.next = tmp;
-        Some(self.curr)
+        Some(self.curr.clone())
     }
 }
 
@@ -19,8 +23,8 @@ fn main() {
     let args: Vec<String> = env::args().collect();
     let number: usize = args[1].parse().unwrap();
 
-    let fib_iter = Fib { curr: 1, next: 1 };
-    let fibs: Vec<u64> = fib_iter.take(number).collect();
+    let fib_iter = Fib { curr: BigUint::one(), next: BigUint::one() };
+    let fibs: Vec<BigUint> = fib_iter.take(number).collect();
 
     let digits: Vec<Vec<u64>> = fibs.iter()
         .map(|x| {
