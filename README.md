@@ -3,7 +3,7 @@ Vi testar ett koncept för kodnöt liknande den vi hade på Linkedin där vi ska
 
 I detta koncept ska deltagarna koda själva, lite med inspiration av den tävning bloggen kodsnack hade med AdventOfCode.
 
-Så, där enbart äran är priset :-)
+Så, en tävling där enbart äran är priset :-)
 
 * Implementera funktion som kan räkna fram en sekvens av fibonaccinummer. 1+1=2 -> 1+2=3 -> 2+3=5 etc etc.
 * För varje nummer i sekvensen, addera de ingående siffrorna med varandra, tex 78 -> 7+8 == 15.
