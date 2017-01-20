@@ -23,7 +23,7 @@ fn main() {
     let args: Vec<String> = env::args().collect();
     let number: usize = args[1].parse().unwrap();
 
-    let fib_iter = Fib { curr: BigUint::one(), next: BigUint::one() };
+    let fib_iter = Fib { curr: BigUint::one(), next: BigUint::one() + BigUint::one()};
     let fibs: Vec<BigUint> = fib_iter.take(number).collect();
 
     let digits: Vec<Vec<u64>> = fibs.iter()
